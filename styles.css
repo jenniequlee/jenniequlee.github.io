@@ -1,0 +1,266 @@
+@charset "utf-8"; /*character encoding; optional for CSS document*/
+
+@font-face {
+  font-family: Raleway;
+  src:
+    url('fonts/raleway_thin-webfont.woff'),
+    url('fonts/raleway_thin-webfont.ttf');
+}
+
+/* homepage */
+
+#welcome {
+  text-align: center;
+  font-size: 2em;
+}
+
+.pic {
+  border: 1px solid none;
+  margin-right: 1em;
+  padding-left: 2em;
+  float: left;
+}
+
+.floatbreak {
+  clear: both;
+}
+
+/* Basic structure */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation */
+
+nav {
+  /* background: white; */
+  /* background: linear-gradient(darkgrey, grey, black); */
+  width: 100%;
+  height: 6em;
+  padding-left: 1em;
+  padding-right: 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+ul.nav-list {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li.nav-item {
+  font-family: Raleway, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+/* Banner image */
+
+figure {
+  margin: 0;
+  line-height: 0;
+  border-bottom: 1px solid transparent;
+  max-height: 20em;
+  overflow: hidden;
+}
+
+img.banner {
+  width: 100%;
+  height: auto;
+}
+
+/* Main content */
+
+main {
+  margin-top: 6em;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+  "A"
+  "a"
+  "B"
+  "b"
+  "C"
+  "c";
+  padding: 1em;
+}
+
+.A {grid-area: A;}
+.a {grid-area: a;}
+.B {grid-area: B;}
+.b {grid-area: b;}
+.C {grid-area: C;}
+.c {grid-area: c;}
+/* .L {grid-area: L;} */
+
+/* Text */
+
+h1, h2, h3 {
+  font-family: Raleway, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 1.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+h4, h5, h6 {
+  font-family: Raleway, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 1em;
+  line-height: 1.5em;
+  letter-spacing: .015em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+p {
+  font-family: Raleway, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 1em;
+  line-height: 1.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+p::first-letter {
+  font-size: 200%;
+  color: grey;
+  vertical-align: middle;
+}
+
+/*Links*/
+
+a:link, a:visited {
+  color: grey;
+  text-decoration: underline;
+  text-decoration-color: grey;
+}
+
+a.nav:link, a.nav:visited {
+  color: grey;
+  text-decoration: none;
+}
+
+a:hover, a.nav:hover {
+  background-color: purple;
+}
+
+a:active, a.nav:active {
+  color: lightgray;
+}
+
+button {
+  border-radius: 8px;
+  padding: 4px 12px;
+  background-color: white;
+  color: darkgrey;
+  border: 2px solid white;
+  display: inline-block;
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* footer */
+
+footer {
+  border-top: 1px solid transparent;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 2em;
+  background-color: transparent;
+  background-image: url("images/bkg.png");
+  background-size: 3.5em;
+  background-position: bottom center;
+  background-attachment: scroll;
+  background-repeat: repeat-x;
+}
+
+.design {
+  font-size: 0.5em;
+  text-align: right;
+  float: right;
+  padding: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.logo {
+  float: left;
+  margin-right: 0;
+  margin-bottom: 0;
+  display: block;
+}
+
+/* Responsive design */
+
+@media screen and (min-width: 35em) {
+
+  main {
+    margin-top: 4em;
+  }
+
+  nav {
+    height: 4em;
+  }
+
+  ul.nav-list {
+    display: flex;
+  }
+
+  li.nav-item{
+    margin-right: 2%;
+  }
+
+}
+
+@media screen and (min-width: 60em) {
+
+  .wrapper {
+    display: grid;
+    grid-auto-rows: minmax(5em, auto);
+    grid-template-columns: 1fr 3fr;
+    column-gap: 1em;
+    grid-template-areas:
+    "A a"
+    "B b"
+    "C c";
+    padding: 0;
+  }
+
+  .A {
+    grid-area: A;
+    padding-left: 5%;
+  }
+  .B {
+    grid-area: B;
+    padding-left: 5%;
+  }
+  .C {
+    grid-area: C;
+    padding-left: 5%;
+  }
+
+  .a {
+    grid-area: a;
+    padding-right: 5%;
+  }
+  .b {
+    grid-area: b;
+    padding-right: 5%;
+  }
+  .c {
+    grid-area: c;
+    padding-right: 5%;
+  }
+
+}
