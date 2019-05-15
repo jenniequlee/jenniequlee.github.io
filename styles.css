@@ -112,12 +112,8 @@ main {
   padding-top: 2em;
   grid-area: design;
 }
-#btn1 {
-  grid-area: btn1;
-}
-#btn2 {
-  grid-area: btn2;
-}
+#btn1 {grid-area: btn1;}
+#btn2 {grid-area: btn2;}
 
 /* Text */
 
