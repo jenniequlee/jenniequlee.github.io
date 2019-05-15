@@ -35,8 +35,6 @@ body {
 /* Navigation */
 
 nav {
-  /* background: white; */
-  /* background: linear-gradient(darkgrey, grey, black); */
   width: 100%;
   height: 6em;
   padding-left: 1em;
@@ -85,8 +83,10 @@ main {
   grid-template-areas:
   "A"
   "a"
+  "La"
   "B"
   "b"
+  "Lb"
   "C"
   "c";
   padding: 1em;
@@ -98,7 +98,19 @@ main {
 .b {grid-area: b;}
 .C {grid-area: C;}
 .c {grid-area: c;}
-/* .L {grid-area: L;} */
+.La {grid-area: La;}
+.Lb {grid-area: Lb;}
+
+#footer {
+  display: grid;
+  grid-template-areas:
+  "design btn1"
+  "design btn2";
+}
+
+.design {grid-area: design;}
+#btn1 {grid-area: btn1;}
+#btn2 {grid-area: btn2;}
 
 /* Text */
 
@@ -157,12 +169,16 @@ a:active, a.nav:active {
 }
 
 button {
-  border-radius: 8px;
-  padding: 4px 12px;
+  font-size: 10px;
+  text-align: left;
   background-color: white;
   color: darkgrey;
   border: 2px solid white;
-  display: inline-block;
+  padding: 5px;
+  border-radius: 8px;
+  width: 72px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 
 button:hover {
@@ -178,7 +194,7 @@ footer {
   padding: 2em;
   background-color: transparent;
   background-image: url("images/bkg.png");
-  background-size: 3.5em;
+  background-size: 5em;
   background-position: bottom center;
   background-attachment: scroll;
   background-repeat: repeat-x;
@@ -187,18 +203,9 @@ footer {
 .design {
   font-size: 0.5em;
   text-align: right;
-  float: right;
   padding: 1em;
   margin-right: 1em;
   margin-bottom: 1em;
-  display: block;
-}
-
-.logo {
-  float: left;
-  margin-right: 0;
-  margin-bottom: 0;
-  display: block;
 }
 
 /* Responsive design */
@@ -232,7 +239,9 @@ footer {
     column-gap: 1em;
     grid-template-areas:
     "A a"
+    "La La"
     "B b"
+    "Lb Lb"
     "C c";
     padding: 0;
   }
@@ -262,5 +271,7 @@ footer {
     grid-area: c;
     padding-right: 5%;
   }
+  .La {grid-area: La;}
+  .Lb {grid-area: Lb;}
 
 }
